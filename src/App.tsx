@@ -1,21 +1,12 @@
-import { useBlogs } from "./hooks/useBlogs";
+import { BlogDetail } from "./components/BlogDetail"
 
 function App() {
-  const { data, isLoading, isError, error } = useBlogs();
-
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Error: {(error as Error).message}</p>;
-
-  console.log("Blogs 👉", data);
-
   return (
-    <div>
-      <h1>CA Monk Blog App</h1>
-      <div className="text-red-500 font-bold">Tailwind Working</div>
-
-      <p>Check console for blogs data</p>
+    <div className="max-w-4xl mx-auto p-6">
+      <BlogDetail blogId={1} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
