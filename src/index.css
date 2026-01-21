@@ -3,6 +3,10 @@ body,
 #root {
   height: 100%;
 }
+body {
+  @apply bg-background text-foreground;
+}
+
 
 @tailwind base;
 @tailwind components;
