@@ -21,9 +21,13 @@ export const Header = ({ onAddBlogClick }: Props) => {
         </nav>
 
         {/* Right: Action */}
-        <Button onClick={onAddBlogClick}>
-          Add Blog
-        </Button>
+  <Button
+  onClick={onAddBlogClick}
+  style={{ backgroundColor: "#5755D9", color: "white" }}
+>
+  Add Blog
+</Button>
+
       </div>
     </header>
   )

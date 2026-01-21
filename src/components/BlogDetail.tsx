@@ -13,11 +13,18 @@ export const BlogDetail = ({ blogId }: Props) => {
   return (
 <div className="pt-24 flex justify-center">
       <div className="text-center max-w-sm">
-        <div className="text-5xl mb-4">📝</div>
 
-        <h3 className="text-lg font-semibold text-gray-800">
-          Choose an article to get started
-        </h3>
+    <h1
+  className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight"
+  style={{ color: "#5755D9" }}
+>
+  CA MONK BLOG
+</h1>
+
+<h3 className="text-lg font-semibold text-gray-800 mb-2">
+  Choose an article to get started
+</h3>
+
 
         <p className="text-gray-500 mt-2">
           Select a blog from the list to read insights on finance,

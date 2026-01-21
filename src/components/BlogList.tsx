@@ -24,7 +24,8 @@ export const BlogList = ({ onSelectBlog }: Props) => {
       {data!.map((blog) => (
         <Card
           key={blog.id}
-          className="p-4 cursor-pointer hover:bg-gray-50"
+         className="p-5 cursor-pointer hover:bg-gray-50 transition border-l-4"
+  style={{ borderLeftColor: "#5755D9" }}
           onClick={() => onSelectBlog(blog.id)}
         >
           <div className="flex flex-wrap gap-2 mb-2">
