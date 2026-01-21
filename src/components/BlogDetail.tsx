@@ -10,12 +10,23 @@ export const BlogDetail = ({ blogId }: Props) => {
 
   // Empty state
   if (!blogId) {
-    return (
-      <div className="text-gray-500 text-center mt-20">
-        Select a blog to read
+  return (
+<div className="pt-24 flex justify-center">
+      <div className="text-center max-w-sm">
+        <div className="text-5xl mb-4">📝</div>
+
+        <h3 className="text-lg font-semibold text-gray-800">
+          Choose an article to get started
+        </h3>
+
+        <p className="text-gray-500 mt-2">
+          Select a blog from the list to read insights on finance,
+          accounting, and career growth.
+        </p>
       </div>
-    );
-  }
+    </div>
+  )
+}
 
   // Loading state
   if (isLoading) {

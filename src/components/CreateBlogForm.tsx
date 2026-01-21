@@ -13,24 +13,35 @@ export const CreateBlogForm = () => {
   const [content, setContent] = useState("")
   const [coverImage, setCoverImage] = useState("")
   const [category, setCategory] = useState("")
+const [success, setSuccess] = useState(false)
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    mutate({
-      title,
-      description,
-      content,
-      coverImage,
-      category: category.split(",").map((c) => c.trim()),
-    })
+    mutate(
+  {
+    title,
+    description,
+    content,
+    coverImage,
+    category: category.split(",").map((c) => c.trim()),
+  },
+  {
+    onSuccess: () => {
+      setSuccess(true)
 
-    setTitle("")
-    setDescription("")
-    setContent("")
-    setCoverImage("")
-    setCategory("")
+      setTitle("")
+      setDescription("")
+      setContent("")
+      setCoverImage("")
+      setCategory("")
+
+      setTimeout(() => {
+        setSuccess(false)
+      }, 5000)
+    },
   }
+)}
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -67,6 +78,17 @@ export const CreateBlogForm = () => {
       <Button type="submit" disabled={isPending}>
         {isPending ? "Creating..." : "Create Blog"}
       </Button>
+{success && (
+  <div className="rounded-md border border-green-200 bg-green-50 p-3">
+    <p className="text-green-700 font-medium">
+      ✅ Blog published successfully
+    </p>
+    <p className="text-green-600 text-sm mt-1">
+      Your blog is now visible in the list.
+    </p>
+  </div>
+)}
+
 
       {isError && (
         <p className="text-red-500">Failed to create blog</p>
