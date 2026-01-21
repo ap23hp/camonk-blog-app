@@ -56,7 +56,8 @@ export const BlogDetail = ({ blogId }: Props) => {
   const blog = data!;
 
   return (
-    <article className="space-y-6">
+  <article className="space-y-6 max-w-3xl mx-auto">
+
       <img
         src={blog.coverImage}
         alt={blog.title}
@@ -65,13 +66,17 @@ export const BlogDetail = ({ blogId }: Props) => {
 
       <h2 className="text-2xl font-bold">{blog.title}</h2>
 
-      <div className="text-sm text-gray-500">
-        {blog.category.join(", ")} • {new Date(blog.date).toDateString()}
-      </div>
+  <div className="inline-flex items-center gap-2 bg-[#D9DDFC] px-3 py-1 rounded-md text-sm text-gray-800">
+  {blog.category.join(", ")} • {new Date(blog.date).toDateString()}
+</div>
 
       <p className="text-gray-700">{blog.description}</p>
 
-      <div className="text-gray-800 leading-relaxed">{blog.content}</div>
+<div className="prose prose-gray max-w-none">
+  {blog.content}
+</div>
+
+
       {/* Tags */}
 <div className="pt-4">
   <h4 className="text-sm font-semibold text-gray-600 mb-2">

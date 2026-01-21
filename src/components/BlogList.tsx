@@ -29,16 +29,20 @@ export const BlogList = ({ onSelectBlog }: Props) => {
           onClick={() => onSelectBlog(blog.id)}
         >
           <div className="flex flex-wrap gap-2 mb-2">
-            {blog.category.map((cat) => (
-              <Badge key={cat} variant="secondary">
-                {cat}
-              </Badge>
-            ))}
+      {blog.category.map((cat) => (
+  <Badge
+    key={cat}
+    className="bg-[#D9DDFC] text-[#5755D9] font-medium"
+  >
+    {cat}
+  </Badge>
+))}
+
           </div>
 
    <div className="flex items-center justify-between mb-1">
   <h3 className="font-semibold">{blog.title}</h3>
-  <span className="text-xs text-gray-400">
+  <span className="text-xs text-gray-500">
     {getRelativeTime(blog.date)}
   </span>
 </div>
