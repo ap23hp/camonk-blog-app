@@ -54,6 +54,24 @@ export const BlogDetail = ({ blogId }: Props) => {
       <p className="text-gray-700">{blog.description}</p>
 
       <div className="text-gray-800 leading-relaxed">{blog.content}</div>
+      {/* Tags */}
+<div className="pt-4">
+  <h4 className="text-sm font-semibold text-gray-600 mb-2">
+    Tags
+  </h4>
+
+  <div className="flex flex-wrap gap-2">
+    {blog.category.map((tag) => (
+      <span
+        key={tag}
+        className="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700"
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+</div>
+
     </article>
   );
 };
