@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { BlogDetail } from "./components/BlogDetail"
 import { BlogList } from "./components/BlogList"
+import { CreateBlogForm } from "./components/CreateBlogForm"
 
 function App() {
   const [selectedBlogId, setSelectedBlogId] = useState<number | null>(null)
@@ -8,9 +9,11 @@ function App() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
       {/* Left Panel */}
-      <div className="md:col-span-1">
-        <BlogList onSelectBlog={setSelectedBlogId} />
-      </div>
+<div className="md:col-span-1 space-y-6">
+  <CreateBlogForm />
+  <BlogList onSelectBlog={setSelectedBlogId} />
+</div>
+
 
       {/* Right Panel */}
       <div className="md:col-span-2">
